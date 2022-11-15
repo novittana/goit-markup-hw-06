@@ -589,7 +589,13 @@
           <h3 class="footer-title">Підпишіться на розсилку</h3>
           <form class="subscribe-form">
             <div class="footer-form-field">
-              <input class="footer-mail-input" type="mail" placeholder="E-mail" />
+              <input
+                class="footer-mail-input"
+                type="email"
+                placeholder="E-mail"
+                name="index-subscribe-mail"
+                id="index-subscribe-mail"
+              />
             </div>
             <button class="subscribe-button btn" type="submit">
               Підписатися
@@ -643,17 +649,20 @@
               </svg>
             </div>
           </div>
-
-          <label class="modal-label" for="comment">Коментар</label>
-          <textarea
-            class="modal-text"
-            name="comment"
-            id="comment"
-            rows="10"
-            placeholder="Введіть текст"
-          >
+          <div class="modal-field">
+            <label class="modal-label" for="comment">Коментар</label>
+            <div class="input-wrap">
+              <textarea
+                class="modal-text"
+                name="comment"
+                id="comment"
+                rows="10"
+                placeholder="Введіть текст"
+              >
 Введіть текст</textarea
-          >
+              >
+            </div>
+          </div>
           <div class="modal-field">
             <input
               class="input-check"
@@ -661,17 +670,26 @@
               name="conditions"
               value="true"
               id="conditions"
+              hidden
             />
-            <label for="conditions" class="check-text"
-              >Погоджуюся з розсилкою та приймаю <a href="#">Умови договору</a>
+            <label for="conditions" class="check-text">
+              <span>
+                <svg class="icon-check" width="16" height="15">
+                  <use href="./images/icons.svg#icon-check"></use>
+                </svg>
+              </span>
+              Погоджуюся з розсилкою та приймаю &nbsp;<a
+                class="conditions-link link"
+                href="#"
+                target="_blank"
+                >Умови договору</a
+              >
             </label>
           </div>
           <button class="send-btn btn" type="submit">Відправити</button>
         </form>
       </div>
     </div>
-    <script src="./js/modal.js">
-      Відправити
-    </script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

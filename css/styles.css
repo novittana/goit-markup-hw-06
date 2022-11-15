@@ -730,7 +730,6 @@ ul {
 
 .modal-field {
   margin-bottom: 10px;
-  margin-top: 4px;
 }
 
 .modal-input {
@@ -741,14 +740,18 @@ ul {
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
   outline: transparent;
   padding-left: 42px;
-  /* cursor: pointer; */
+
+  transition-property: color, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-input:focus {
+.modal-input:focus,
+.modal-text:focus {
   border-color: #2196f3;
+  color: #000000;
 }
 
 .modal-input:focus + .modal-input-icon {
@@ -795,6 +798,7 @@ ul {
 
 .input-wrap {
   position: relative;
+  margin-top: 4px;
 }
 
 .modal-input-icon {
@@ -814,9 +818,8 @@ ul {
   line-height: 1.17em;
   letter-spacing: 0.01em;
   padding: 12px 16px;
-
-  color: rgba(117, 117, 117, 0.5);
   resize: none;
+  color: rgba(117, 117, 117, 0.5);
 }
 
 .check-text {
@@ -824,16 +827,49 @@ ul {
   line-height: 1.71em;
   letter-spacing: 0.03em;
   color: #757575;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+
+  transition-property: color, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.check-text::before {
-  content: "";
+.check-text span {
   width: 16px;
   height: 15px;
-  border: 2px solid #212121;
+  border: 2px solid #303030;
   border-radius: 3px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
 }
 
+.input-check:checked + .check-text span {
+  background-color: #2196f3;
+  border: transparent;
+  fill: #ffffff;
+}
+
+input-check:focus + .check-text span {
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-check:focus + .check-text span {
+  border-color: #212121;
+}
+
+.conditions-link {
+  color: #2196f3;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
 /*-----------------PORTFOLIO-----------------------*/
 
 .projects-filter {
